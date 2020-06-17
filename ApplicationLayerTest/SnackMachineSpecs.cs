@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-using ApplicationLayer;
+using DomainModel;
 
 using FluentAssertions;
 
 using Xunit;
 
-using static ApplicationLayer.Money;
+using static DomainModel.Money;
 
 
-namespace ApplicationLayerTest
+namespace DomainModelTest
 {
     public class SnackMachineSpecs
     {

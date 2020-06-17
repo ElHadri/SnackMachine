@@ -1,0 +1,178 @@
+﻿<Page
+    x:Class="UWP_UI.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:kit="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded">
+
+    <StackPanel Orientation="Horizontal" Background="{ThemeResource SystemControlAcrylicWindowBrush}" RequestedTheme="Dark">
+        <StackPanel Width="768">
+            <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                <StackPanel Orientation="Horizontal" Name="Coins" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Button Name="OneCent" Click="OneCent_Click" Margin="0,20,40,50">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Source="Assets\1c.png" Width="90" Height="45"/>
+                                <TextBlock Name="numberOf1C" HorizontalAlignment="Center" ></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="TenCents" Click="TenCents_Click" Margin="40,20,40,50">
+                        <StackPanel>
+                            <Image Source="Assets\10c.png" Width="90" Height="45"/>
+                            <TextBlock Name="numberOf10C" HorizontalAlignment="Center" ></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="TwentyFiveCents" Click="TwentyFiveCents_Click" Margin="40,20,0,50">
+                        <StackPanel>
+                            <Image Source="Assets\25c.png" Width="90" Height="45"/>
+                            <TextBlock Name="numberOf25C" HorizontalAlignment="Center" ></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Name="Notes" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Button Name="OneDollar" Click="OneDollar_Click" Margin="0,0,40,30">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Source="Assets\1d.png" Width="90" Height="60"/>
+                                <TextBlock Name="numberOf1D" HorizontalAlignment="Center" ></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="FiveDollars" Click="FiveDollars_Click" Margin="40,0,40,30">
+                        <StackPanel>
+                            <Image Source="Assets\5d.png" Width="90" Height="60"/>
+                            <TextBlock Name="numberOf5D" HorizontalAlignment="Center" ></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="TwentyDollars" Click="TwentyDollars_Click" Margin="40,0,0,30">
+                        <StackPanel>
+                            <Image Source="Assets\20d.png" Width="90" Height="60"/>
+                            <TextBlock Name="numberOf20D" HorizontalAlignment="Center" ></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <Border BorderThickness="1,1,1,1" BorderBrush="Black" Height="30" Width="466" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" CornerRadius="15,15,15,15" FocusVisualPrimaryBrush="#FF494444">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFDADADA"/>
+                            <GradientStop Color="#FF4F4C4C" Offset="0.144"/>
+                            <GradientStop Color="#FF040404" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.RenderTransform>
+                        <CompositeTransform SkewX="0.25" TranslateX="0.218"/>
+                    </Border.RenderTransform>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="Money inserted : " HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="insertedAmount" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0" />
+                    </StackPanel>
+                </Border>
+                <StackPanel Width="466" Padding="0,20,0,0">
+                    <Button Content="Return money" HorizontalAlignment="Right" Width="104" Height="75" Click="CancelPurchase" FontWeight="Bold" FontStyle="Normal" Foreground="Red"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Padding="0,100,0,0">
+                <StackPanel Orientation="Horizontal" Name="Coins_Inside" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Source="Assets\1c.png" Width="90" Height="45"/>
+                        <TextBlock Name="numberOf1C_Inside" HorizontalAlignment="Center" ></TextBlock>
+                    </StackPanel>
+                    <StackPanel>
+                        <Image Source="Assets\10c.png" Width="90" Height="45"/>
+                        <TextBlock Name="numberOf10C_Inside" HorizontalAlignment="Center" ></TextBlock>
+                    </StackPanel>
+                    <StackPanel>
+                        <Image Source="Assets\25c.png" Width="90" Height="45"/>
+                        <TextBlock Name="numberOf25C_Inside" HorizontalAlignment="Center" ></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Name="Notes_Inside" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Source="Assets\1d.png" Width="90" Height="40" Margin="10,5,10,0"/>
+                        <TextBlock Name="numberOf1D_Inside" HorizontalAlignment="Center" ></TextBlock>
+                    </StackPanel>
+                    <StackPanel>
+                        <Image Source="Assets\5d.png" Width="90" Height="40" Margin="10,5,10,0"/>
+                        <TextBlock Name="numberOf5D_Inside" HorizontalAlignment="Center" ></TextBlock>
+                    </StackPanel>
+                    <StackPanel>
+                        <Image Source="Assets\20d.png" Width="90" Height="40" Margin="10,5,10,0" VerticalAlignment="Center"/>
+                        <TextBlock Name="numberOf20D_Inside" HorizontalAlignment="Center" ></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <Border BorderThickness="1,1,1,1" BorderBrush="Black" Height="30" Width="466" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" CornerRadius="15,15,15,15" FocusVisualPrimaryBrush="#FF494444">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFDADADA"/>
+                            <GradientStop Color="#FF4F4C4C" Offset="0.144"/>
+                            <GradientStop Color="#FF040404" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.RenderTransform>
+                        <CompositeTransform SkewX="0.25" TranslateX="0.218"/>
+                    </Border.RenderTransform>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="Money inserted : " HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="insertedAmount_Inside" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Width="768">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="chocolate" Click="chocolate_Click" Margin="0,120,40,50">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Image Source="Assets\Chocolate.png" Width="90" Height="45"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Left : " HorizontalAlignment="Center" ></TextBlock>
+                                    <TextBlock Name="chocolateLeft" HorizontalAlignment="Center" Padding="10,0,0,0"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                        <TextBlock Text="5.50 $" HorizontalAlignment="Center" VerticalAlignment="Top" ></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Name="soda" Click="soda_Click" Margin="40,120,40,50">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <Image Source="Assets\Soda.png" Width="90" Height="45"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Left : " HorizontalAlignment="Center" ></TextBlock>
+                                <TextBlock Name="sodaLeft" HorizontalAlignment="Center" Padding="10,0,0,0"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                        <TextBlock Text="0.90 $" HorizontalAlignment="Center" VerticalAlignment="Top" ></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Name="gum" Click="gum_Click" Margin="40,120,0,50">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <Image Source="Assets\Gum.png" Width="90" Height="45"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Left :" HorizontalAlignment="Center" ></TextBlock>
+                                <TextBlock Name="gumLet" HorizontalAlignment="Center" Padding="10,0,0,0" ></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                        <TextBlock Text="0.90 $" HorizontalAlignment="Center" VerticalAlignment="Top" ></TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+    </StackPanel>
+</Page>

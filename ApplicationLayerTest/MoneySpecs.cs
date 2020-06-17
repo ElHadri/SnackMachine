@@ -1,9 +1,9 @@
 using System;
-using ApplicationLayer;
+using DomainModel;
 using FluentAssertions;
 using Xunit;
 
-namespace ApplicationLayerTest
+namespace DomainModelTest
 {
     public class MoneySpecs
     {

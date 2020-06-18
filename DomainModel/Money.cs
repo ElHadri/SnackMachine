@@ -5,7 +5,6 @@ namespace DomainModel
 {
     public class Money : ValueObject
     {
-        public readonly string _currency = "$";
 
         /* fields: composition of money */
         public readonly int NbOfCent;  // or  public int NbOfCent {get;}   ==> immutability
@@ -147,14 +146,17 @@ namespace DomainModel
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
-            yield return _currency;
-
             yield return NbOfCent;
             yield return NbOfTenCent;
             yield return NbOfQuarter;
             yield return NbOfDollar;
             yield return NbOfFiveDollar;
             yield return NbOfTwentyDollar;
+        }
+
+        public override string ToString()
+        {
+            return $"{Amount:C}";
         }
 
     }

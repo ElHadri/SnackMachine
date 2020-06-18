@@ -8,7 +8,7 @@ namespace DomainModel
 {
     public sealed class SnackMachine : Entity
     {
-        public Money SnackMachinedMoney { get; private set; } = None;
+        public Money SnackMachineMoney { get; private set; } = None;
         public Money TransactionMoney { get; private set; } = None; // Attention c'est immutable
         public Dictionary<string, int> SnackCategories { get; private set; }
 
@@ -40,7 +40,7 @@ namespace DomainModel
             //Money snackPrice = Dollar; // changer implementation
             //Money change = TransactionMoney - snackPrice;
 
-            SnackMachinedMoney += TransactionMoney;
+            SnackMachineMoney += TransactionMoney;
             TransactionMoney = None;
         }
 

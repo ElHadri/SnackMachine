@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 using DomainModel;
-
 using FluentAssertions;
-
 using Xunit;
-
 using static DomainModel.Money;
-
 
 namespace DomainModelTest
 {
@@ -82,7 +75,7 @@ namespace DomainModelTest
             snackMachine.GetSnack();
 
             // Assert
-            Assert.Equal(Dollar + Dollar, snackMachine.SnackMachinedMoney);
+            Assert.Equal(Dollar + Dollar, snackMachine.SnackMachineMoney);
             Assert.Equal(None, snackMachine.TransactionMoney);
         }
 
